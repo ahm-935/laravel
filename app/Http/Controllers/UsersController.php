@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
-class RoleController extends Controller
+class UsersController extends Controller
 {
     public function index(){
         // $roles = Role::all()->toArray();    //Ascending order
@@ -23,7 +23,7 @@ class RoleController extends Controller
         return view('admin.role.details');
     }
 
-    public function edit(){
+    public function update(){
         return view('admin.role.update');
     }
 }
