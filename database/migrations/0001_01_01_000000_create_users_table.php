@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+<<<<<<< HEAD
             $table->bigInteger('role_id')->default(1);
+=======
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

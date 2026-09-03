@@ -8,7 +8,11 @@ return [
     |--------------------------------------------------------------------------
     |
     | This file is for storing the credentials for third party services such
+<<<<<<< HEAD
     | as Mailgun, Postmark, AWS and more. This file provides the de facto
+=======
+    | as Resend, Postmark, AWS, and more. This file provides the de facto
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
     | location for this type of information, allowing packages to have
     | a conventional file to locate the various service credentials.
     |

@@ -3,6 +3,10 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+<<<<<<< HEAD
+=======
+use Illuminate\Http\Request;
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -14,5 +18,11 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
+<<<<<<< HEAD
         //
+=======
+        $exceptions->shouldRenderJsonWhen(
+            fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
+        );
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
     })->create();

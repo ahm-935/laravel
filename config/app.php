@@ -114,7 +114,11 @@ return [
     | manage Laravel's "maintenance mode" status. The "cache" driver will
     | allow maintenance mode to be controlled across multiple machines.
     |
+<<<<<<< HEAD
     | Supported drivers: "file", "cache"
+=======
+    | Supported drivers: "file", "cache", "array"
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
     |
     */
 

@@ -2,6 +2,10 @@ compiled.php
 config.php
 down
 events.scanned.php
+<<<<<<< HEAD
+=======
+lsp-*.php
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
 maintenance.php
 routes.php
 routes.scanned.php

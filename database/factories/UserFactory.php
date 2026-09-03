@@ -26,7 +26,10 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+<<<<<<< HEAD
             'role_id' => fake()->numberBetween(1, 5),
+=======
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),

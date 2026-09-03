@@ -14,13 +14,21 @@ return new class extends Migration
         Schema::create('cache', function (Blueprint $table) {
             $table->string('key')->primary();
             $table->mediumText('value');
+<<<<<<< HEAD
             $table->integer('expiration')->index();
+=======
+            $table->bigInteger('expiration')->index();
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
         });
 
         Schema::create('cache_locks', function (Blueprint $table) {
             $table->string('key')->primary();
             $table->string('owner');
+<<<<<<< HEAD
             $table->integer('expiration')->index();
+=======
+            $table->bigInteger('expiration')->index();
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
         });
     }
 

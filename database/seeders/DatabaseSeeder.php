@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+<<<<<<< HEAD
 use App\Models\Role;
+=======
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,6 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+<<<<<<< HEAD
         User::factory(10)->create();
         Role::factory()->create();
 
@@ -26,5 +30,13 @@ class DatabaseSeeder extends Seeder
         // $this->call([
         //     RoleSeeder::class,
         // ]);
+=======
+        // User::factory(10)->create();
+
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
+>>>>>>> f5e64f3 (sparkAdmin templating on L13)
     }
 }
