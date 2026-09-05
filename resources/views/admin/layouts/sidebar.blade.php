@@ -29,19 +29,19 @@
         <div class="sidebar-menu-title">Components</div>
         <ul class="sidebar-menu-list">
           <li class="sidebar-menu-item">
-            <a href="tables-basic.html" class="sidebar-menu-link" id="menu-basictables" title="Basic Tables">
-              <i class="bi bi-table"></i>
-              <span>Basic Tables</span>
+            <a href="/users" class="sidebar-menu-link" id="menu-basictables" title="Basic Tables">
+              <i class="bi bi-person"></i>
+              <span>Users</span>
             </a>
           </li>
           <li class="sidebar-menu-item">
-            <a href="ui-forms.html" class="sidebar-menu-link" id="menu-uiforms" title="Forms and Input">
+            <a href="/forms" class="sidebar-menu-link" id="menu-uiforms" title="Forms and Input">
               <i class="bi bi-input-cursor-text"></i>
               <span>Forms & Input</span>
             </a>
           </li>
           <li class="sidebar-menu-item">
-            <a href="ui-buttons.html" class="sidebar-menu-link" id="menu-uibuttons" title="Buttons">
+            <a href="/buttons" class="sidebar-menu-link" id="menu-uibuttons" title="Buttons">
               <i class="bi bi-menu-button-wide-fill"></i>
               <span>Buttons & Alerts</span>
             </a>

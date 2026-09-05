@@ -4,6 +4,12 @@
 
 
 @section('content')
+    {{-- @php
+    echo "
+    <pre>";
+            print_r($users);
+            echo "</pre>";
+    @endphp --}}
     <x-admin.phead title="Users" subtitle="Manage your users from this page.">
         <a href="{{ route('users.create') }}" class="btn-custom btn-custom-secondary fw-bold" type="button">
             <i class="bi bi-plus"></i> Add User
@@ -43,65 +49,64 @@
             <table class="table-custom">
                 <thead>
                     <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Product Info</th>
-                        <th>Category</th>
-                        <th>Amount</th>
-                        <th>Order Date</th>
-                        <th>Status</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Row 1 -->
-                    <tr>
-                        <td class="table-order-id">#ORD-9982</td>
-                        <td>
-                            <div class="table-user-cell">
-                                <img src="assets/images/user_1.jpg" alt="Eleanor Pena" class="table-user-avatar"
-                                    onerror="this.src='assets/images/avatar.png'">
-                                <div>
-                                    <div class="table-user-name">Eleanor Pena</div>
-                                    <div class="table-user-sub">eleanor.pena@example.com</div>
+                    @foreach ($users as $user)
+                        <tr>
+                            <td class="table-id">{{ $user->id }}</td>
+                            <td>
+                                <div class="table-user-cell">
+                                    <span
+                                        class="table-user-avatar bg-brand-lime d-flex align-items-center 
+                                        justify-content-center text-lime fw-bold fs-5">
+                                        {{ Str::substr($user->name, 0, 1) }}</span>
+                                    <div>
+                                        <div class="table-user-name">{{ $user->name }}</div>
+                                        <div class="table-user-email">{{ $user->email }}</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td class="table-product-name">Oversized Hoodie</td>
-                        <td>Apparel</td>
-                        <td class="table-amount">$89.90</td>
-                        <td>Feb 14, 2026</td>
-                        <td><span class="badge-table success">Paid</span></td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-1">
-                                <a href="#" class="table-btn-action" title="View details"><i class="bi bi-eye"></i></a>
-                                <a href="#" class="table-btn-action" title="Edit row"><i class="bi bi-pencil"></i></a>
-                                <a href="#" class="table-btn-action delete" title="Delete row"><i
-                                        class="bi bi-trash"></i></a>
-                            </div>
-                        </td>
-                    </tr>
-                 
+                            </td>
+                            <td><span class="table-user-role">{{ $user->role }}</span></td>
+                            <td>
+                                <div class="d-flex justify-content-center gap-1">
+                                    <a href="{{ route('users.show', ['id' => $user->id]) }}" class="table-btn-action"
+                                        title="View details"><i class="bi bi-eye"></i></a>
+                                    <a href="{{ route('users.edit', ['id' => $user->id]) }}" class="table-btn-action"
+                                        title="Edit"><i class="bi bi-pencil"></i></a>
+                                    <a href="#" class="table-btn-action delete" title="Delete"><i class="bi bi-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    @endforeach
+
+
                 </tbody>
             </table>
         </div>
 
         <!-- Footer Controls / Pagination -->
         <div class="table-footer-control">
-            <span class="table-pagination-info">Showing 1 to 10 of 50 entries</span>
-            <nav aria-label="Page navigation">
-                <ul class="pagination mb-0 gap-1">
-                    <li class="page-item disabled"><a class="page-link border-0" href="#"><i
-                                class="bi bi-chevron-left"></i></a>
-                    </li>
-                    <li class="page-item active"><a class="page-link border-0" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link border-0" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link border-0" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link border-0" href="#"><i class="bi bi-chevron-right"></i></a>
-                    </li>
-                </ul>
-            </nav>
+            {{ $users->links() }}
         </div>
     </div>
     <!-- END: Basic Table Card Container -->
+@endsection
+@section('style')
+<style>
+    .table-footer-control nav {
+        width: 100%;
+    }
+    .table-footer-control nav div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+</style>
+
 @endsection

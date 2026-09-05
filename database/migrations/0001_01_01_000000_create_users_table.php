@@ -17,9 +17,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->bigInteger('role_id')->default(1);
 =======
 >>>>>>> f5e64f3 (sparkAdmin templating on L13)
+=======
+            $table->bigInteger('role_id')->unsigned()->default(2); // Default role_id for regular users
+>>>>>>> 12840fa (db data fetch)
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

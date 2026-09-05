@@ -31,8 +31,9 @@ class UserFactory extends Factory
 =======
 >>>>>>> f5e64f3 (sparkAdmin templating on L13)
             'email' => fake()->unique()->safeEmail(),
+            'role_id' => fake()->numberBetween(1, 4), // Randomly assign role_id as 1 (Admin), 2 (User), 3 (Editor), or 4 (Viewer)
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => static::$password ??= Hash::make('12345678'),
             'remember_token' => Str::random(10),
         ];
     }

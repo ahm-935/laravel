@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         User::factory(10)->create();
         Role::factory()->create();
 
@@ -38,5 +39,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 >>>>>>> f5e64f3 (sparkAdmin templating on L13)
+=======
+        User::factory(30)->create();
+
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+>>>>>>> 12840fa (db data fetch)
     }
 }
